@@ -1,6 +1,5 @@
-import jsonify
 # flask_app.py
-from flask import Flask
+from flask import Flask, jsonify
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
@@ -10,5 +9,4 @@ def hello():
 
 @app.route("/api")
 def json_data():
-    jdata = dict(something=1)
-    return jsonify(jdata)
+    return jsonify(something="somethingelse")
