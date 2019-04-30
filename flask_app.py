@@ -1,5 +1,8 @@
 # flask_app.py
 from flask import Flask, jsonify
+import requests
+import pandas as pd
+
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
@@ -9,4 +12,5 @@ def hello():
 
 @app.route("/api")
 def json_data():
-    return jsonify(something="somethingelse")
+    data = pd.DataFrame(dict(words=[1, 2, 3]))
+    return data.to_json(great='records')
