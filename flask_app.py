@@ -6,3 +6,8 @@ app.config["DEBUG"] = True
 @app.route("/")
 def hello():
     return "Hello World!"
+
+@app.route("/api")
+def json_data():
+    jdata = dict(something=1)
+    return jsonify(jdata)
